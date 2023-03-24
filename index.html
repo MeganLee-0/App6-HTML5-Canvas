@@ -60,7 +60,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   		var img = new Image();
 			img.src="dog.jpeg";
 			img.onload=function(){
-  				b_context.drawImage(img,10,10);}
+  				b_context.drawImage(img,10,10,200,100);}
 		}	
 	
 </script>
@@ -85,13 +85,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     left: 0vw;
     z-index: 1;
 }
-
-img id="dog" src="dog.jpeg" alt="puppy picture"
-
-img, object{
-	max-height:5%;
-        max-width:5%;
-}
 	
 </style>
 
@@ -102,7 +95,7 @@ img, object{
 	
 <div id="content" class="w3-container">
 	
-	<canvas id="b" width="350" height="200" style="border:1px solid #000000" onclick="draw_b();return false"> ==$0 	</canvas>
+	<canvas id="b" width="400" height="250" style="border:1px solid #000000" onclick="draw_b();return false"> ==$0 	</canvas>
 		 
 	<p> <a href="#"  onclick="draw_b();return false" class="w3-btn w3-black"> Click to draw a rectangle</a> </p>
 	<p> <a href="#"  onclick="draw_name();return false" class="w3-btn w3-black"> Click to add my name</a> </p>
