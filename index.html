@@ -48,17 +48,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 	
 	function draw_name(){
-		var c = document.getElementById("b");
-		var ctx = c.getContext("2d");
-		ctx.font = "30px Arial";
-		ctx.fillText("Megan Lee", 10, 50);
+		var b_canvas = document.getElementById("b");
+		var b_context = b_canvas.getContext("2d");
+		b_context.font = "30px Arial";
+		b_context.fillText("Megan Lee", 10, 50);
 		}
 	
-	function add_image(){
- 		var c = document.getElementById("b");
-  		var ctx = c.getContext("2d");
-  		var img = document.getElementById("dog");
-  		ctx.drawImage(img,10,10);
+	function addimage(){
+ 		var b_canvas = document.getElementById("b");
+  		var b_context = b_canvas.getContext("2d");
+  		var img = new Image();
+			img.src="dog.jpeg";
+			img.onload=function(){
+  				b_context.drawImage(img,10,10);}
 		}	
 	
 </script>
@@ -104,7 +106,7 @@ img, object{
 		 
 	<p> <a href="#"  onclick="draw_b();return false" class="w3-btn w3-black"> Click to draw a rectangle</a> </p>
 	<p> <a href="#"  onclick="draw_name();return false" class="w3-btn w3-black"> Click to add my name</a> </p>
-	<p> <a href="#"  onclick="add_image();return false" class="w3-btn w3-black"> Click to add an image</a> </p>
+	<p> <a href="#"  onclick="addimage();return false" class="w3-btn w3-black"> Click to add an image</a> </p>
 		<!-- <img id="dog" src="dog.jpeg" alt="puppy picture"/> -->
 
 		
