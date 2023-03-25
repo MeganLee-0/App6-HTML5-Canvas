@@ -34,43 +34,43 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
-<script>
+<script> //this section is the CSS portion of the code that triggers specific actions by defining various variables and functions
 	var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 		alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 		console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 	
-	var b_canvas = document.getElementById("b");
+	var b_canvas = document.getElementById("b"); // labels and identifies the canvas so I can quickly refer to it in future code
 
-	function draw_b() {
-  		var b_canvas = document.getElementById("b");
- 		var b_context = b_canvas.getContext("2d");
-  		b_context.fillRect(300, 10, 150, 100);
-		}
+	function draw_b() { //creates function draw_b which, when triggered, draws a rectangle inside the canvas
+  		var b_canvas = document.getElementById("b"); //targets a specific variable (the canvas) so the rectangle will go inside the canvas
+ 		var b_context = b_canvas.getContext("2d"); //provides the context of 2D so that it can run
+  		b_context.fillRect(300, 10, 150, 100); //this line codes for the drawing context, where the drawing methods and properties (filled rectangle with the given coordinates and dimensions) are defined
+		} //closes the draw_b function
 	
-	function draw_name(){
-		var b_canvas = document.getElementById("b");
-		var b_context = b_canvas.getContext("2d");
-		b_context.font = "30px Arial";
-		b_context.fillText("Megan Lee", 10, 50);
-		}
+	function draw_name(){ //creates function draw_name which, when triggered draws out my name inside the canvas
+		var b_canvas = document.getElementById("b");//targets a specific variable (the canvas) so my name will go inside the canvas
+		var b_context = b_canvas.getContext("2d");//provides the context of 2D so that it can run
+		b_context.font = "30px Arial"; //codes for the drawing context- in this case, codes for the size and font of my name 
+		b_context.fillText("Megan Lee", 10, 50); //codes for the drawing properties- in this case codes for the words (filled), and the coordinates (location)
+		} //closes the draw_name function
 	
-	function addimage(){
- 		var b_canvas = document.getElementById("b");
-  		var b_context = b_canvas.getContext("2d");
-  		var img = new Image();
-			img.src="dog.jpeg";
-			img.onload=function(){
-  				b_context.drawImage(img,90,90,300,200);}
-		}	
-	function reset(){
-		var b_canvas = document.getElementById("b");
-		b_canvas.width = b_canvas.width;
-		}
+	function addimage(){ //creates the function addimage which, when triggered, adds an image inside the canvas
+ 		var b_canvas = document.getElementById("b"); //targets a specific variable (the canvas) so my name will go inside the canvas
+  		var b_context = b_canvas.getContext("2d"); //provides the context of 2D so that it can run
+  		var img = new Image(); //codes for the image as instructed below, and codes/defines variable img
+			img.src="dog.jpeg"; //provides the source of the image, which has been added to the repository
+			img.onload=function(){ 
+  				b_context.drawImage(img,90,90,300,200);} //codes the the drawing properties and image properties- calls upon the variable img with given coordinates and dimensions
+		} //closes the addimage function	
+	function reset(){ //creates the function reset which, when triggered, resets the dimensions of the canvas (therefore reseting the canvas to original state)
+		var b_canvas = document.getElementById("b"); //targets a specific variable (the canvas) so my name will go inside the canvas
+		b_canvas.width = b_canvas.width; //defines new width to be equal to the old canvas width so that the dimensions of the canvas doesn't change but the canvas will reset
+		} //closes the reset function
 	
-</script>
+</script> //closes script component of code
 
 
-
+<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. Codes for visuals and formatting as well as dimensions for the inserted image -->
 <style>	
 .body {
      margin: 0em;
@@ -92,14 +92,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 </style>
 
-<body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
-</div>
+<body> <!-- this body portion essentially codes for all the content and visuals of the app -->
+<div id="header" class="w3-container w3-flat-carrot"> <!--this formats the header, its content/title, and its color-->
+	<h1>App6---HTML5-Canvas</h1> <!--codes for the content and words of the header-->
+</div> <!--closes the header code section -->
 	
-<div id="content" class="w3-container">
+<div id="content" class="w3-container"> <!-- this section codes for the content of the page-->
 	
-	<p><canvas id="b" width="500" height="300" style="border:1px solid #000000" onclick="draw_b();return false"> ==$0 	
+	<p><canvas id="b" width="500" height="300" style="border:1px solid #000000" <!--  onclick="draw_b();return false"> ==$0 line codes for the actual canvas with specific style/color as defined.-->	
 		</canvas> </p>
 		 
 	<p> <a href="#"  onclick="draw_b();return false" class="w3-btn w3-black"> Click to draw a rectangle</a> </p>
